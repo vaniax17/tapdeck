@@ -1,0 +1,5 @@
+node_modules/
+src/ui.js
+__pycache__/
+logs/
+scripts/probe

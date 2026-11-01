@@ -1,0 +1,21 @@
+{
+  "name": "touchdeck-experiment",
+  "private": true,
+  "main": "src/main.cjs",
+  "scripts": {
+    "build": "esbuild src/ui.tsx --bundle --outfile=src/ui.js",
+    "start": "electron43 --ozone-platform=wayland .",
+    "check": "tsc && python -m py_compile scripts/touch.py scripts/config.py scripts/capture.py && node --check src/main.cjs && node --check src/preload.cjs",
+    "probe:build": "cc -Wall -Wextra scripts/probe.c -linput -o scripts/probe"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0",
+    "typescript": "^5.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0"
+  }
+}
